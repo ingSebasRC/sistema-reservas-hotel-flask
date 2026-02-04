@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmación de Reserva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f1f1;
+            padding: 30px;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2e8b57;
+        }
+        p {
+            margin: 8px 0;
+        }
+        .mensaje {
+            background: #e0ffe0;
+            border: 1px solid #9fdc9f;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            color: #256029;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Reserva Confirmada</h1>
+
+        {% if mensaje %}
+        <div class="mensaje">{{ mensaje }}</div>
+        {% endif %}
+
+        <p><strong>Hotel:</strong> {{ reserva.hotel }}</p>
+        <p><strong>Nombre:</strong> {{ reserva.nombre }}</p>
+        <p><strong>Correo:</strong> {{ reserva.correo }}</p>
+        <p><strong>Teléfono:</strong> {{ reserva.telefono }}</p>
+        <p><strong>Fecha de entrada:</strong> {{ reserva.fecha_entrada }}</p>
+        <p><strong>Fecha de salida:</strong> {{ reserva.fecha_salida }}</p>
+        <p><strong>Número de huéspedes:</strong> {{ reserva.huespedes }}</p>
+        <p><strong>Comentarios:</strong> {{ reserva.comentarios }}</p>
+
+        <br>
+        <a href="/">Volver al inicio</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre la Empresa</title>
+    <link rel="preload" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="preload" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <div class="nav-bg">
+        <nav class="nav-p contenedor">
+            <a href="{{ url_for('index') }}">Inicio</a>
+        </nav>
+    </div>
+
+    <main class="contenedor sombra">
+        <section>
+            <h2>Contacto</h2>
+
+            {% if mensaje %}
+                <p style="color: green;"><strong>{{ mensaje }}</strong></p>
+            {% endif %}
+            {% if error %}
+                <p style="color: red;"><strong>{{ error }}</strong></p>
+            {% endif %}
+
+            <form class="formulario" method="POST" action="{{ url_for('nosotros') }}">
+                <fieldset>
+                    <legend>Contáctanos llenando todos los campos</legend>
+                    <div class="contenedor-campos">
+
+                        <div class="campos">
+                            <label>Nombre</label>
+                            <input class="input-text" type="text" name="nombre" placeholder="Tu nombre" required>
+                        </div> 
+
+                        <div class="campos">
+                            <label>Teléfono</label>
+                            <input class="input-text" type="tel" name="telefono" placeholder="Tu Teléfono" required>  
+                        </div>
+
+                        <div class="campos">
+                            <label>Correo</label>
+                            <input class="input-text" type="email" name="correo" placeholder="Tu Correo" required>
+                        </div>
+
+                        <div class="campos">
+                            <label>Mensaje</label>
+                            <textarea class="input-text" name="mensaje" required></textarea>
+                        </div>
+
+                    </div>            
+
+                    <div class="alinear-derecha">
+                        <input class="boton w-100" type="submit" value="Enviar"> 
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

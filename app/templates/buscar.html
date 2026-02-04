@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscar Hotel</title>
+  <link rel="preload" href="{{ url_for('static', filename='css/normalize.css') }}" as="style">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+  <link rel="preload" href="{{ url_for('static', filename='css/styles.css') }}" as="style">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+<body>
+  <header>
+    <div class="contenedor">
+      <h1 class="titulo">Buscar Hotel</h1>
+    </div>
+  </header>
+
+  <div class="nav-bg">
+    <nav class="navegacion-principal contenedor">
+      <a href="{{ url_for('index') }}">Inicio</a>
+      <a href="{{ url_for('destino') }}">Destino</a>
+    </nav>
+  </div>
+
+    <main class="contenedor sombra">
+    <section class="buscador">
+      <h2>¿Cuántas personas se van a hospedar?</h2>
+      <form action="{{ url_for('buscar') }}" method="post">
+        <label for="personas">Cantidad de personas:</label>
+        <select id="personas" name="personas" required>
+          <option value="">--Seleccione--</option>
+          <option value="2">2 Personas (Pareja)</option>
+          <option value="4">4 Personas (Grupo)</option>
+          <option value="6">6 Personas (Familiar)</option>
+        </select>
+        <div style="margin-top:1rem;">
+          <button type="submit" class="boton">Buscar</button>
+        </div>
+      </form>
+    </section>
+
+    {% if hotel %}
+      <section class="resultado">
+        <hr>
+        <h2>Hotel recomendado</h2>
+        <div class="hotel-card" style="max-width: 500px; margin-top:1rem;">
+          <div class="foto-hotel {{ hotel.css_class }}"></div>
+          <div style="padding:1rem;">
+            <h3>{{ hotel.nombre }}</h3>
+            <p>{{ hotel.descripcion }}</p>
+            <p><strong>Capacidad:</strong> {{ hotel.capacidad }} personas</p>
+            <a class="boton" href="{{ url_for('reservar', hotel_id=hotel.id) }}">Reservar ahora</a>
+          </div>
+        </div>
+      </section>
+    {% elif mensaje %}
+      <p style="margin-top:1rem; font-weight:600;">{{ mensaje }}</p>
+    {% endif %}
+  </main>
+
+  <footer class="footer">
+    <p>Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

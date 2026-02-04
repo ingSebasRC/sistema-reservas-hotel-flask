@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hotel Estelar - Juan Pablo Hotel</title>
+  <link rel="preload" href="{{ url_for('static', filename='css/normalize.css') }}" as="style">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+  <link rel="preload" href="{{ url_for('static', filename='css/styles.css') }}" as="style">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <header>
+    <div class="contenedor">
+      <h1 class="titulo">Hotel Estelar</h1>
+    </div>
+  </header>
+
+  <div class="nav-bg">
+    <nav class="navegacion-principal contenedor">
+      <a href="{{ url_for('index') }}">Inicio</a>
+      <a href="{{ url_for('destino') }}">Destino</a>
+      <a href="{{ url_for('buscar') }}">Buscar</a>
+    </nav>
+  </div>
+
+  <main class="contenedor sombra">
+    <section class="detalle-hotel">
+
+      <!-- Collage de 2 imágenes pegadas -->
+      <div class="collage-doble">
+        <div class="img-collage habitacion2"></div>
+        <div class="img-collage bano2"></div>
+      </div>
+
+      <!-- Descripción -->
+      <h2>Habitación para máximo 4 personas</h2>
+      <p>
+        Nuestra amplia habitación está pensada para alojar cómodamente a 4 personas.
+        Dispone de dos camas dobles, sofá cama, aire acondicionado, amplio espacio de almacenamiento y zona de descanso.
+        Ideal para grupos que buscan comodidad y espacio.
+      </p>
+      <p>
+        El baño cuenta con ducha tipo lluvia, dos lavamanos, amenities incluidos, espejo de cuerpo entero
+        y toallas para todo el grupo.
+      </p>
+
+      <h3>Servicios incluidos:</h3>
+      <ul>
+        <li>Desayuno tipo buffet</li>
+        <li>Wi-Fi ilimitado</li>
+        <li>Parqueadero para vehículos grandes</li>
+        <li>Recepción 24/7</li>
+        <li>Servicio a la habitación</li>
+      </ul>
+
+      <!-- Botón que lleva a la reserva de hotel 2 -->
+      <a class="boton" href="{{ url_for('reservar', hotel_id=hotel_id) }}">Reservar ahora</a>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

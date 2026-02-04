@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GHL Hotel Grand - Juan Pablo Hotel</title>
+  <link rel="preload" href="{{ url_for('static', filename='css/normalize.css') }}" as="style">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+  <link rel="preload" href="{{ url_for('static', filename='css/styles.css') }}" as="style">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <header>
+    <div class="contenedor">
+      <h1 class="titulo">GHL Hotel Grand</h1>
+    </div>
+  </header>
+
+  <div class="nav-bg">
+    <nav class="navegacion-principal contenedor">
+      <a href="{{ url_for('index') }}">Inicio</a>
+      <a href="{{ url_for('destino') }}">Destino</a>
+      <a href="{{ url_for('buscar') }}">Buscar</a>
+    </nav>
+  </div>
+
+  <main class="contenedor sombra">
+    <section class="detalle-hotel">
+
+      <!-- Collage de 2 imágenes pegadas -->
+      <div class="collage-doble">
+        <div class="img-collage habitacion3"></div>
+        <div class="img-collage bano3"></div>
+      </div>
+
+      <!-- Descripción -->
+      <h2>Habitación familiar con espacio para niños</h2>
+      <p>
+        Esta habitación ha sido especialmente diseñada para familias con niños, ofreciendo comodidad y seguridad.
+        Capacidad máxima: 6 personas. Cuenta con dos camas dobles, una cama sencilla adicional, aire acondicionado,
+        escritorio, TV por cable y área de juegos infantil.
+      </p>
+      <p>
+        El baño privado es espacioso, con doble lavamanos, ducha amplia, cambiador para bebés, artículos de aseo incluidos
+        y toallas para toda la familia.
+      </p>
+
+      <h3>Servicios incluidos:</h3>
+      <ul>
+        <li>Desayuno buffet para todos los huéspedes</li>
+        <li>Wi-Fi gratuito</li>
+        <li>Parqueadero cubierto</li>
+        <li>Zona infantil en el hotel</li>
+        <li>Servicio de limpieza diario</li>
+      </ul>
+
+      <!-- Botón que lleva a la reserva del hotel 3 -->
+      <a class="boton" href="{{ url_for('reservar', hotel_id=hotel_id) }}">Reservar ahora</a>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

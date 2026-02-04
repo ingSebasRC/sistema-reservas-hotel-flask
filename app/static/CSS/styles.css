@@ -1,0 +1,391 @@
+:root {
+  --blanco: #ffffff;
+  --oscuro: #212121;
+  --primario: #ffc107;
+  --secundario: #0097a7;
+  --gris: #757575;
+  --gris-claro: #DFE9F3;
+  --transition: .25s ease-in-out;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(to top, var(--gris-claro) 0%, var(--blanco) 100%);
+  color: #222;
+  line-height: 1.4;
+}
+
+.contenedor {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 1.6rem;
+}
+
+h1 { 
+  font-size: 3.8rem; text-align: center; margin: .5rem 0; 
+}
+h2 { 
+  font-size: 2.8rem; margin: 1rem 0 .5rem; 
+}
+h3 { 
+  font-size: 1.8rem; margin: .5rem 0; 
+}
+
+.titulo span { 
+  font-size: 2rem; 
+}
+
+/* Navegación */
+.nav-bg { 
+  background-color: var(--secundario); 
+}
+
+.nav-p{
+  display: flex; 
+  flex-direction: column; 
+  gap: .25rem;
+}
+
+@media (min-width:768px){
+  .nav-p{
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.nav-p a {
+  color: var(--blanco); 
+  text-decoration:none; 
+  font-size:2rem; 
+  font-weight:700;
+  padding:1rem; 
+  text-align:center; 
+  transition:background var(--transition);
+}
+
+.nav-p a:hover { 
+  background-color: var(--primario); 
+  color: var(--oscuro); 
+}
+
+.navegacion-principal {
+  display: flex; 
+  flex-direction: column; 
+  gap: .25rem;
+}
+
+@media (min-width:768px){
+  .navegacion-principal{ 
+    flex-direction:row; 
+    justify-content:space-between; 
+  }
+}
+
+.navegacion-principal a {
+  color: var(--blanco); 
+  text-decoration:none; 
+  font-size:2rem; 
+  font-weight:700;
+  padding:1rem; 
+  text-align:center; 
+  transition:background var(--transition);
+}
+
+.navegacion-principal a:hover { 
+  background-color: var(--primario); 
+  color: var(--oscuro); 
+}
+
+/* Hero */
+.hotel {
+  background-image: url("../img/hotel.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 450px;
+  position: relative;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenido-hotel {
+  position:absolute; inset:0;
+  background:rgba(0,0,0,0.7);
+  display:flex; 
+  flex-direction:column; 
+  gap:.5rem; 
+  align-items:center; 
+  justify-content:center;
+  text-align:center; 
+  padding:1rem;
+}
+
+.contenido-hotel h2, .contenido-hotel p { 
+  color: var(--blanco); 
+}
+
+/* Botón */
+.boton {
+  background-color: var(--secundario); 
+  color: var(--blanco);
+  padding:1rem 2.5rem; 
+  font-size:1.8rem; 
+  text-transform:uppercase;
+  font-weight:700; 
+  border:none; 
+  border-radius:.5rem; 
+  cursor:pointer;
+  text-decoration:none; 
+  display:inline-block;
+  transition: filter var(--transition);
+}
+.boton:hover { 
+  filter:brightness(1.05); 
+}
+
+/* Hoteles */
+.fila-hoteles {
+  display:flex; 
+  gap:2rem; 
+  flex-wrap:wrap; 
+  justify-content:center; 
+  margin:2rem 0;
+}
+
+.hotel-card {
+  flex:1 1 250px; 
+  max-width:300px;
+  background: var(--blanco);
+  padding:1.5rem 1rem 2rem;
+  border-radius:1rem;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  text-align:center;
+  display:flex; 
+  flex-direction:column; 
+  gap:.75rem;
+  text-decoration:none; 
+  color:inherit;
+  transition: transform .2s ease;
+}
+
+.hotel-card:hover { 
+  transform: translateY(-3px); 
+}
+
+.foto-hotel {
+  width:100%;
+  height:180px; 
+  margin:0 auto 1rem;
+  background-size:cover; 
+  background-position:center; 
+  background-repeat:no-repeat;
+  border:4px solid var(--primario);
+}
+
+/* Imágenes desde CSS */
+.foto-hotel.hotel1 { 
+  background-image: url("../img/hotel1.jpg");
+}
+
+.foto-hotel.hotel2 {
+   background-image: url("../img/hotel2.jpg"); 
+}
+
+.foto-hotel.hotel3 { 
+  background-image: url("../img/hotel3.jpg"); 
+}
+
+.hotel-card h3 {
+  color: var(--secundario); 
+}
+
+.hotel-card p { 
+  font-size:1.2rem; line-height:1.3; flex-grow:1; 
+}
+
+/* Contenedor principal */
+.sombra {
+  box-shadow:7px 9px 17px 2px rgba(128,128,128,0.2);
+  background-color: var(--blanco);
+  padding:2rem;
+  border-radius:2rem;
+  margin-bottom:2rem;
+}
+
+/* Formulario */
+.formulario {
+  background-color: var(--gris);
+  width:min(60rem,100%);
+  margin:0 auto; 
+  padding:2rem;
+  border-radius:1rem; 
+  color: var(--blanco);
+}
+
+.formulario fieldset{
+    border: none;
+}
+
+.formulario legend {
+  text-align:center; 
+  font-size:1.8rem; 
+  text-transform:uppercase; 
+  font-weight:700;
+  margin-bottom:2rem; 
+  color:var(--primario);
+}
+
+
+
+@media (min-width: 768px) {
+    .contenedor-campos{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto 20rem;
+    column-gap: 1rem;
+}
+    .campos:nth-child(3),
+    .campos:nth-child(4){
+        grid-column: 1 / 3;
+    }
+}
+.campos { 
+  display:flex;
+  flex-direction:column; 
+}
+
+.campos label { 
+  font-weight:bold; 
+  margin-bottom:.5rem; 
+}
+
+.campos textarea {
+   min-height:15rem; 
+   resize:vertical; 
+}
+
+.input-text {
+  width:100%; 
+  border:none; 
+  padding:1.5rem; 
+  border-radius:.5rem;
+  font-size:1.4rem;
+   margin-bottom:.5rem;
+}
+
+/* Footer */
+.footer {
+  text-align:center; 
+  padding:1.5rem 0; 
+  margin-top:2rem;
+  font-size:1.2rem; 
+  background:#f2f2f2;
+}
+
+/* Imágenes adicionales para hotel1 */
+/* Collage horizontal de habitación y baño */
+
+.collage-doble {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.img-collage {
+  height: 240px;
+  background-size: cover;
+  background-position: center;
+}
+
+.img-collage.habitacion {
+  background-image: url("../img/habitacion1.jpg");
+}
+
+.img-collage.bano {
+  background-image: url("../img/baño1.jpg");
+}
+.img-collage.habitacion2 {
+  background-image: url("../img/habitacion2.jpg");
+}
+
+.img-collage.bano2 {
+  background-image: url("../img/baño2.jpg");
+}
+.img-collage.habitacion3 {
+  background-image: url("../img/habitacion3.jpg");
+}
+
+.img-collage.bano3 {
+  background-image: url("../img/baño3.jpg");
+}
+
+/* Menú de fechas */
+.fecha-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Botón similar a los enlaces del navbar */
+.fecha-toggle {
+  color: var(--blanco);
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  transition: background var(--transition);
+}
+
+.fecha-toggle:hover {
+  background-color: var(--blanco);
+  color: var(--oscuro);
+}
+
+.fecha-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--blanco);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 1rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 200px;
+}
+
+.fecha-menu select {
+  padding: 0.5rem;
+  font-size: 1.4rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+.fecha-menu.oculto {
+  display: none;
+}

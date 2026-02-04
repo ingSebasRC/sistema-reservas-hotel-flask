@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Destino - Juan Pablo Hotel</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <script src="{{ url_for('static', filename='js/fecha-selector.js') }}"></script>
+</head>
+<body>
+  <header>
+    <div class="contenedor">
+      <h1 class="titulo">Juan Pablo <span>Hotel</span></h1>
+    </div>
+  </header>
+
+  <div class="nav-bg">
+    <nav class="nav-p contenedor">
+    <a href="{{ url_for('nosotros') }}">Buscar</a>
+    </nav>
+  </div>
+
+  <main class="contenedor sombra">
+    <section id="destinos">
+      <h2>Destinos populares</h2>
+      <p>Elige entre nuestros hoteles recomendados en Villavicencio:</p>
+      <div class="fila-hoteles">
+        <a class="hotel-card" href="{{ url_for('hotel1') }}">
+          <div class="foto-hotel hotel1"></div>
+          <h3>VVC Hotel's</h3>
+          <p>Ubicado en el corazón de Villavicencio, con vista panorámica y desayuno incluido.</p>
+        </a>
+
+        <a class="hotel-card" href="{{ url_for('hotel2') }}">
+          <div class="foto-hotel hotel2"></div>
+          <h3>Hotel Estelar</h3>
+          <p>Opciones económicas sin sacrificar comodidad. Wi-Fi gratuito y fácil acceso.</p>
+        </a>
+
+        <a class="hotel-card" href="{{ url_for('hotel3') }}">
+          <div class="foto-hotel hotel3"></div>
+          <h3>GHL Hotel Grand</h3>
+          <p>Experiencia boutique con piscina y atención personalizada.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    // togglear el menú de fecha
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector(".fecha-toggle");
+      const menu = document.querySelector(".fecha-menu");
+      if (toggle && menu) {
+        toggle.addEventListener("click", (e) => {
+          e.preventDefault();
+          menu.classList.toggle("oculto");
+        });
+        // cerrar si se hace clic fuera
+        document.addEventListener("click", (e) => {
+          if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+            menu.classList.add("oculto");
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

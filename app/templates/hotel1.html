@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VVC Hotel's - Juan Pablo Hotel</title>
+  <link rel="preload" href="{{ url_for('static', filename='css/normalize.css') }}" as="style">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+  <link rel="preload" href="{{ url_for('static', filename='css/styles.css') }}" as="style">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <header>
+    <div class="contenedor">
+      <h1 class="titulo">VVC Hotel's</h1>
+    </div>
+  </header>
+
+  <div class="nav-bg">
+    <nav class="navegacion-principal contenedor">
+      <a href="{{ url_for('index') }}">Inicio</a>
+      <a href="{{ url_for('destino') }}">Destino</a>
+      <a href="{{ url_for('buscar') }}">Buscar</a>
+    </nav>
+  </div>
+
+  <main class="contenedor sombra">
+    <section class="detalle-hotel">
+
+      <!-- Collage de 3 imágenes unidas -->
+      <div class="collage-doble">
+        <div class="img-collage habitacion"></div>
+        <div class="img-collage bano"></div>
+      </div>
+
+      <!-- Descripción -->
+      <h2>Habitación estándar para 2 personas</h2>
+      <p>
+        Nuestra habitación doble está diseñada para brindarte descanso y confort.
+        Cuenta con cama Queen size, aire acondicionado, escritorio, Wi-Fi de alta velocidad
+        y una vista parcial a la ciudad. Perfecta para parejas o viajeros solos.
+      </p>
+      <p>
+        El baño privado incluye ducha tipo lluvia, artículos de aseo gratuitos y espejo con iluminación LED.
+        Disfruta de un entorno limpio y moderno durante tu estadía.
+      </p>
+
+      <h3>Servicios incluidos:</h3>
+      <ul>
+        <li>Desayuno continental diario</li>
+        <li>Wi-Fi ilimitado</li>
+        <li>Parqueadero seguro</li>
+        <li>Recepción 24/7</li>
+        <li>Servicio de limpieza diario</li>
+      </ul>
+
+      <!-- Botón de reservar apunta a la ruta dinámica -->
+      <a class="boton" href="/reservar/1">Reservar ahora</a>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
