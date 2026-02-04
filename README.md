@@ -10,7 +10,7 @@ según la cantidad de huéspedes, número de días y disponibilidad.
 - Confirmación de reserva
 - Conexión a base de datos MySQL
 
-## 🛠️ Tecnologías utilizadas
+## Tecnologías utilizadas
 - Python
 - Flask
 - MySQL (XAMPP)
@@ -18,7 +18,7 @@ según la cantidad de huéspedes, número de días y disponibilidad.
 - CSS
 - JavaScript
 
-## ⚙️ Instalación y ejecución
+## Instalación y ejecución
 1. Clonar el repositorio
 2. Crear un entorno virtual
 3. Instalar dependencias
@@ -26,3 +26,4 @@ según la cantidad de huéspedes, número de días y disponibilidad.
 5. Ejecutar:
 ```bash
 python app.py
+
